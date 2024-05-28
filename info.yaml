@@ -1,5 +1,6 @@
 # Tiny Tapeout project information
 project:
+    wokwi_id:  0
   title:        ""      # Project title
   author:       ""      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
@@ -11,11 +12,15 @@ project:
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_sreeramtirumalasetty"
   
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
-    - "project.v"
+    - "tt_um_sreeramtirumalasetty.v"
+    -  "latchh.v"
+    -  "booth_encoding.v"
+    -  "decoder_3_8.v"
+    -  "cla.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
