@@ -1,4 +1,4 @@
-module fin_module(input [7:0]in1, input [7:0]in2, 
+module tt_um_sreeramtirumalasetty(input [7:0]in1, input [7:0]in2, 
                    input clk,
                    output [15:0]out);
 wire [7:0]mcand,mlier;
