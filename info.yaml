@@ -1,6 +1,5 @@
 # Tiny Tapeout project information
 project:
-    wokwi_id:  0
   title:        "Modified Booth Multiplier"      # Project title
   author:       "Varun Chandra Pendyala"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
