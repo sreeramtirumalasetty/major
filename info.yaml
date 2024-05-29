@@ -16,10 +16,6 @@ project:
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
     - "project.v"
-    -  "latchh.v"
-    -  "booth_encoding.v"
-    -  "decoder_3_8.v"
-    -  "cla.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
