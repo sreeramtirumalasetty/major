@@ -1,10 +1,33 @@
-module tt_um_sreeramtirumalasetty(input [7:0]in1, input [7:0]in2, 
-                   input clk,
-                   output [15:0]out);
+/*
+ * Copyright (c) 2024 Your Name
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`default_nettype none
+
+
+module tt_um_sreeramtirumalasetty (
+    input  wire [7:0] ui_in,    // Dedicated inputs
+    output wire [7:0] uo_out,   // Dedicated outputs
+    input  wire [7:0] uio_in,   // IOs: Input path
+    output wire [7:0] uio_out,  // IOs: Output path
+    output wire [7:0] uio_oe,   // IOs: Enable path (active high: 0=input, 1=output)
+    input  wire       ena,      // always 1 when the design is powered, so you can ignore it
+    input  wire       clk,      // clock
+    input  wire       rst_n     // reset_n - low to reset
+);
+
+assign uio_oe=0;
+assign ena=0;
+assign rst_n=0;
+
+
+
+
 wire [7:0]mcand,mlier;
 wire [15:0]ans;
-latchh lat1(in1,clk,mcand);
-latchh lat2(in2,clk,mlier);
+latchh lat1(ui_in,clk,mcand);
+latchh lat2(uio_in,clk,mlier);
 
 wire [22:1]s;
 wire [21:1]c;
@@ -159,8 +182,12 @@ assign c[21]= (p0[14] & c[8]) | (c[8] & s[9]) | (s[9] & p0[14]);
 assign s[22]=( p0[15] ^c[9] ) ^ s[10];
 
 
-cla cla1(.x({c[21:11],p0[4:0]}),.y({s[22:11],p1[1],p1[0]}),.cin(1'b0),.sum(out));
+cla cla1(.x({c[21:11],p0[4:0]}),.y({s[22:11],p1[1],p1[0]}),.cin(1'b0),.sum({ans}));
 
-latchh lat3(ans[7:0],clk,out[7:0]);
-latchh lat4(ans[15:8],clk,out[15:8]);
+latchh lat3(ans[7:0],clk,uo_out);
+latchh lat4(ans[15:8],clk,uio_out);
+
+  // List all unused inputs to prevent warnings
+  wire _unused = &{ena, rst_n, 1'b0};
+
 endmodule
