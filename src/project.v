@@ -22,8 +22,6 @@ module tt_um_multiplier_mbm (
 );
 
 assign uio_oe=0;
-assign ena=0;
-assign rst_n=0;
 
 
 
