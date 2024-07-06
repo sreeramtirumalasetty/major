@@ -3,7 +3,7 @@ project:
   title:        "Modified Booth Multiplier"      # Project title
   author:       ""     BSC Nikitha, BN Meghana, T Sreeram, Varun Chandra P, Mahaa Santeep G, Shylashree N, RV College of Engineering # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "The proposed design multiplies two 8bit signed numbers using modified booth algorithm"      # One line description of what your project does
+  description:  "The project multiplies two 8 bit signed numbers and generates a 16 bit product using Modified Booth Multiplier Algorithm."      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     100000000       # Clock frequency in Hz (or 0 if not applicable)
 
